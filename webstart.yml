@@ -1,0 +1,29 @@
+-   #Deploy Section
+    name: 'create webserver to display "Hello World from SJSU" using ansible playbook'
+    hosts: all
+    become: true
+    become_method: sudo
+    tasks:
+
+        -
+            name: "python installation"
+            apt:
+                name: python
+                update_cache: yes
+                state: latest
+        -
+            name: "Install apache2"
+            apt:
+                name: apache2
+                update_cache: yes
+                state: latest
+
+
+        -   # Display the message "Hello World from SJSU".
+            name: create content
+            copy:
+                src: index.html
+                dest: /var/www/html/index.html
+                mode: 0644
+
+    tags: 'deploy'
