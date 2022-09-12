@@ -10,4 +10,3 @@
                 name: apache2
                 state: stopped
 
-    tags: 'undeploy'
