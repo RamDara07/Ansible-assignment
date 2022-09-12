@@ -1,5 +1,5 @@
--   #UnDeploy Section
-    name: 'halting the webserver  "Hello World from SJSU"'
+-  
+    name: 'halting the webserver'
     hosts: all
     become: true
     become_method: sudo
